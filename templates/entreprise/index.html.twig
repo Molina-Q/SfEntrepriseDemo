@@ -7,8 +7,9 @@
 
     
     {% for entreprise in entreprises %}
-        <li>{{ entreprise.raisonSociale ~ '(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')' }}</li>
+        <a href="{{ path('details_entreprise', {'id': entreprise.id}) }}">
+            <p>{{ entreprise }}</p>
+        </a>
     {% endfor %}
 
 {% endblock %}
-{# vidéo 39:49 #}
