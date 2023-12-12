@@ -114,4 +114,12 @@ class Employe
 
         return $this;
     }
+
+    // toujours mettre get, has, is devant les methodes pour qu'elles puissent être retrouvé automatiquement
+    public function getAge(): ?string
+    {
+        $now = new \DateTime();
+        $interval = $this->dateNaissance->diff($now);
+        return $interval->format("%Y ans");
+    }
 }
